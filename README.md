@@ -9,7 +9,16 @@ An **Elite Deep Archimedea (EDA)** and **Elite Temporal Archimedea (ETA)** loado
 
 ---
 ## Installation
-Clone the repo wherever you want
+
+Clone the repository. Then run
+
+```bash
+cd web
+npm install
+npm run build
+cd ..
+./run_web.py
+```
 
 ## 🚀 1-Click Launchers (Web UI + Default Browser)
 
