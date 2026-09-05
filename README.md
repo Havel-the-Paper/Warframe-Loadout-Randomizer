@@ -1,6 +1,6 @@
 # Warframe EDA/ETA Loadout Generator & Official Wiki Search
 
-An **Elite Deep Archimedea (EDA)** and **Elite Temporal Archimedea (ETA)** loadout randomizer (3 Warframes, 3 Primaries, 3 Secondaries, 3 Melee Weapons) with **Official Warframe Wiki (`wiki.warframe.com`)** integration.
+An **Elite Deep Archimedea (EDA)** and **Elite Temporal Archimedea (ETA)** style loadout randomizer (3 Warframes, 3 Primaries, 3 Secondaries, 3 Melee Weapons) with **Official Warframe Wiki (`wiki.warframe.com`)** integration.
 
 ---
 ## Features
@@ -10,12 +10,10 @@ An **Elite Deep Archimedea (EDA)** and **Elite Temporal Archimedea (ETA)** loado
 ---
 ## Installation & Running
 
-The application has been compiled into a single, standalone HTML file that works directly in your browser with zero dependencies and no local web server required.
+Simply clone this repo wherever you'd like and run:
+**`update_app.py`**
 
-Simply double-click:
-**`Warframe_EDA_App.html`**
-
-It will open in your default browser automatically. All assets (images, sounds, scripts, and styles) are embedded securely within the file.
+It will create the HTML app
 
 ### Building from Source
 
@@ -26,7 +24,9 @@ cd web
 npm install
 npm run build
 ```
-This will generate a new `dist/index.html` containing the entire standalone application. You can copy it to the root folder and rename it to `Warframe_EDA_App.html`.
+This will generate a new `dist/index.html` containing the entire standalone application. You can copy it to the root folder and rename it to whatever you'd like.
+
+(This is what the update script is doing)
 
 ---
 
@@ -49,6 +49,3 @@ python3 eda_cli.py export
 ```
 
 ---
-
-
-```
