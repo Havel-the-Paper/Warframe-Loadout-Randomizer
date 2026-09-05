@@ -27,6 +27,7 @@ npm run build
 This will generate a new `dist/index.html` containing the entire standalone application. You can copy it to the root folder and rename it to whatever you'd like.
 
 (This is what the update script is doing)
+
 ---
 
 ## 💻 Terminal CLI Tool (`eda_cli.py`)
