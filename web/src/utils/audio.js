@@ -1,6 +1,6 @@
-const AUDIO_URL = '/audio/UIZephyrThemeWindowOpen.wav';
+import audioSrc from '../assets/UIZephyrThemeWindowOpen.wav';
 
-let audio = new Audio(AUDIO_URL);
+let audio = new Audio(audioSrc);
 
 export function playRollSound() {
   audio.currentTime = 0;

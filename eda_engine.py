@@ -38,7 +38,7 @@ EXCLUDED_NAMES = {
     "Shadow Claws", "Sevagoth's Shadow", "Venari", "Venari Prime", "Hildryn's Balefire Charger",
     "Mesa's Peacemaker", "Ivara's Artemis Bow", "Titania's Dex Pixia", "Titania's Diwata",
     "Wukong's Iron Staff", "Baruuk's Desert Wind", "Excalibur's Exalted Blade", "Valkyr's Talons",
-    "Follie", "Excalibur Umbra", "Sirocco"
+    "Follie", "Excalibur Umbra", "Sirocco", "Helminth"
 }
 
 
@@ -104,8 +104,46 @@ class EDADatabase:
 
         self.sync_remote_data()
 
+    def _get_best_representatives(self, raw_items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        families = {}
+        for item in raw_items:
+            if item["name"] in EXCLUDED_NAMES:
+                continue
+            bf = item["baseFamily"]
+            if bf not in families:
+                families[bf] = []
+            families[bf].append(item)
+            
+        results = []
+        for bf, items in families.items():
+            pure_items = []
+            for it in items:
+                name = it["name"]
+                is_pure = True
+                if it.get("isPrime") or name.endswith(" Prime"): is_pure = False
+                elif it.get("isKuva") or it.get("isTenet"): is_pure = False
+                elif any(name.startswith(p) for p in DISALLOWED_PREFIXES): is_pure = False
+                elif any(name.endswith(s) for s in DISALLOWED_SUFFIXES): is_pure = False
+                
+                if is_pure:
+                    pure_items.append(it)
+            
+            if pure_items:
+                pure_items.sort(key=lambda x: len(x["name"]))
+                results.append(pure_items[0])
+            else:
+                def score(it):
+                    if it.get("isKuva") or it.get("isTenet"): return 1
+                    if it.get("isPrime") or it["name"].endswith(" Prime"): return 2
+                    return 3
+                
+                items.sort(key=lambda x: (score(x), len(x["name"])))
+                results.append(items[0])
+                
+        return results
+
     def sync_remote_data(self):
-        """Fetches and extracts strictly pure BASE variants from WFCD official datasets."""
+        """Fetches and extracts representative BASE variants (or unique variants) from WFCD official datasets."""
         raw_datasets = {}
         for category, url in WFCD_URLS.items():
             try:
@@ -121,11 +159,11 @@ class EDADatabase:
         raw_secondary = self._clean_raw_items(raw_datasets.get("secondary", []), "Secondary")
         raw_melee = self._clean_raw_items(raw_datasets.get("melee", []), "Melee")
 
-        # Filter strictly to pure base items
-        self.warframes = [it for it in raw_frames if is_pure_base_item(it)]
-        self.primary = [it for it in raw_primary if is_pure_base_item(it)]
-        self.secondary = [it for it in raw_secondary if is_pure_base_item(it)]
-        self.melee = [it for it in raw_melee if is_pure_base_item(it)]
+        # Filter strictly to representative base items (or unique kuva/tenet/prime)
+        self.warframes = self._get_best_representatives(raw_frames)
+        self.primary = self._get_best_representatives(raw_primary)
+        self.secondary = self._get_best_representatives(raw_secondary)
+        self.melee = self._get_best_representatives(raw_melee)
         self.all_items = self.warframes + self.primary + self.secondary + self.melee
 
         # Save to cache

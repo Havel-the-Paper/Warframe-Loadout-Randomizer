@@ -8,31 +8,25 @@ An **Elite Deep Archimedea (EDA)** and **Elite Temporal Archimedea (ETA)** loado
 - Each option comes with a link to its page on the official Warframe wiki
 
 ---
-## Installation
+## Installation & Running
 
-Clone the repository. Then run
+The application has been compiled into a single, standalone HTML file that works directly in your browser with zero dependencies and no local web server required.
+
+Simply double-click:
+**`Warframe_EDA_App.html`**
+
+It will open in your default browser automatically. All assets (images, sounds, scripts, and styles) are embedded securely within the file.
+
+### Building from Source
+
+If you want to edit the React web source code and rebuild the standalone HTML file:
 
 ```bash
 cd web
 npm install
 npm run build
-cd ..
-./run_web.py
 ```
-
-## 🚀 1-Click Launchers (Web UI + Default Browser)
-
-### 🐧 Linux / macOS
-Simply execute the "start_web.sh" script in your terminal or double-click it:
-*Starts the local web server and automatically opens `http://localhost:5173` in your default browser.*
-
----
-
-### 🪟 Windows
-Double-click:
-- **`start_web.bat`** (Batch file) or run **`start_web.ps1`** in PowerShell.
-
-*Starts the local server and automatically launches `http://localhost:5173` in your default browser.*
+This will generate a new `dist/index.html` containing the entire standalone application. You can copy it to the root folder and rename it to `Warframe_EDA_App.html`.
 
 ---
 
