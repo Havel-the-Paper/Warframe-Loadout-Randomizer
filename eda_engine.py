@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Warframe EDA/ETA Loadout Engine
+Warframe Loadout Randomizer - Data Engine
 Exclusively uses pure base variants of Warframes and Weapons (no Primes / Kuva / Tenet / Vandals / Prismas).
 Links directly to official wiki.warframe.com.
 """
@@ -300,7 +300,7 @@ class EDADatabase:
     def format_discord_markdown(self, eda_data: Dict[str, List[Dict[str, Any]]]) -> str:
         """Formats the 3-of-each loadout roll for Discord / Markdown sharing."""
         lines = [
-            "🏆 **WARFRAME EDA / ETA LOADOUT PARAMETERS**",
+            "🏆 **WARFRAME LOADOUT RANDOMIZER**",
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
             "",
             "✨ **WARFRAME (3 Choices)**"
@@ -320,6 +320,6 @@ class EDADatabase:
         for m in eda_data["melees"]:
             lines.append(f"• [{m['name']}]({m['wikiUrl']}) ({m['type']}) `MR{m['masteryReq']}`")
 
-        lines.append("\n🔗 *Generated with Warframe EDA Tool (Official Wiki: wiki.warframe.com)*")
+        lines.append("\n🔗 *Generated with Warframe Loadout Randomizer (Official Wiki: wiki.warframe.com)*")
         return "\n".join(lines)
 

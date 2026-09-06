@@ -90,7 +90,7 @@ export default function App() {
   const handleExportMarkdown = () => {
     if (soundEnabled) playClickSound();
     const lines = [
-      "🏆 **WARFRAME EDA / ETA LOADOUT PARAMETERS**",
+      "🏆 **WARFRAME LOADOUT RANDOMIZER**",
       "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
       "",
       "✨ **WARFRAME CHOICES (3)**"
@@ -114,7 +114,7 @@ export default function App() {
       lines.push(`• [${m.name}](${m.wikiUrl}) - ${m.type} (MR${m.masteryReq})`);
     });
 
-    lines.push("\n🔗 *Generated via Warframe EDA Generator • Official Wiki: wiki.warframe.com*");
+    lines.push("\n🔗 *Generated via Warframe Loadout Randomizer • Official Wiki: wiki.warframe.com*");
 
     const text = lines.join("\n");
     navigator.clipboard.writeText(text);

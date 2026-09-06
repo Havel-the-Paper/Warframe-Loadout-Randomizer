@@ -23,7 +23,7 @@ export default function Header({
           <div>
             <div className="flex items-center gap-2.5 flex-wrap">
               <h1 className="font-cinzel text-xl sm:text-2xl lg:text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500">
-                WARFRAME EDA / ETA LOADOUT
+                WARFRAME LOADOUT RANDOMIZER
               </h1>
               <span className="text-xs uppercase font-extrabold tracking-widest px-2.5 py-0.5 rounded-md bg-amber-950/90 text-amber-300 border border-amber-500/50 shadow-sm">
                 3 OF EACH

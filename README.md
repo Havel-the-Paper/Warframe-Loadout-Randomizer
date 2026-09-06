@@ -1,32 +1,38 @@
-# Warframe EDA/ETA Loadout Generator & Official Wiki Search
+# Warframe Loadout Randomizer
 
-An **Elite Deep Archimedea (EDA)** and **Elite Temporal Archimedea (ETA)** style loadout randomizer (3 Warframes, 3 Primaries, 3 Secondaries, 3 Melee Weapons) with **Official Warframe Wiki (`wiki.warframe.com`)** integration.
+A loadout randomizer for Warframe that gives you 3 random Warframes, 3 Primaries, 3 Secondaries, and 3 Melee Weapons to choose from, with **Official Warframe Wiki (`wiki.warframe.com`)** integration.
 
 ---
 ## Features
-- Randomly selects 3 of each warframe, primary weapon, secondary weapon, and melee weapon. They can be rerolled all at once or individually and display MR requirements
-- Each option comes with a link to its page on the official Warframe wiki
+- Randomly selects 3 of each warframe, primary weapon, secondary weapon, and melee weapon
+- Choices can be rerolled all at once or individually per category
+- Displays MR requirements for each item
+- Each option links directly to its page on the official Warframe wiki
 
 ---
-## Installation & Running
+## Running the App
 
-Simply clone this repo wherever you'd like and run:
-**`update_app.py`**
+Simply double-click:
+**`Warframe_EDA_Desktop.AppImage`** (Linux)
+**`Warframe_EDA_Desktop.exe`** (Windows)
 
-It will create the HTML app
+---
 
-### Building from Source
+### Building from Source Manually
 
-If you want to edit the React web source code and rebuild the standalone HTML file:
+Clone this repo, then either run
+
+```bash
+update_app.py
+```
+
+OR
 
 ```bash
 cd web
 npm install
-npm run build
+npm run electron:build
 ```
-This will generate a new `dist/index.html` containing the entire standalone application. You can copy it to the root folder and rename it to whatever you'd like.
-
-(This is what the update script is doing)
 
 ---
 
