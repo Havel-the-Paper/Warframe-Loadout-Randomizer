@@ -160,20 +160,6 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-slate-800/80 bg-[#070a14] py-8 text-center text-sm text-slate-400">
         <div className="max-w-[1750px] mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="flex items-center gap-1.5">
-            <span>Powered by official Warframe data &</span>
-            <a 
-              href="https://wiki.warframe.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-amber-400 font-bold hover:underline flex items-center gap-1"
-            >
-              <span>wiki.warframe.com</span>
-            </a>
-          </p>
-          <p className="text-slate-500 font-medium">
-            3 Warframes • 3 Primaries • 3 Secondaries • 3 Melees
-          </p>
         </div>
       </footer>
 

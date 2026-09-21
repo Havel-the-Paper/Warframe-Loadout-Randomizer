@@ -25,12 +25,9 @@ export default function Header({
               <h1 className="font-cinzel text-xl sm:text-2xl lg:text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500">
                 WARFRAME LOADOUT RANDOMIZER
               </h1>
-              <span className="text-xs uppercase font-extrabold tracking-widest px-2.5 py-0.5 rounded-md bg-amber-950/90 text-amber-300 border border-amber-500/50 shadow-sm">
-                3 OF EACH
-              </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 flex items-center gap-2 mt-0.5">
-              <span>3 Warframes • 3 Primaries • 3 Secondaries • 3 Melees</span>
+              <span>Powered by</span>
               <span className="text-amber-500/60">•</span>
               <span className="text-amber-300 font-semibold">wiki.warframe.com</span>
             </p>
