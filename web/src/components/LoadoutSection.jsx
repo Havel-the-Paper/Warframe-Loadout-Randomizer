@@ -18,21 +18,21 @@ const CATEGORY_META = {
     accent: 'amber'
   },
   primaries: {
-    title: 'Primary Weapon',
+    title: 'Primary',
     icon: Crosshair,
     color: 'text-cyan-400',
     borderColor: 'border-cyan-500/40',
     accent: 'cyan'
   },
   secondaries: {
-    title: 'Secondary Weapon',
+    title: 'Secondary',
     icon: Flame,
     color: 'text-emerald-400',
     borderColor: 'border-emerald-500/40',
     accent: 'emerald'
   },
   melees: {
-    title: 'Melee Weapon',
+    title: 'Melee',
     icon: Sword,
     color: 'text-purple-400',
     borderColor: 'border-purple-500/40',
@@ -145,9 +145,6 @@ export default function LoadoutSection({
                     <h3 className="font-cinzel text-xl sm:text-2xl font-black tracking-wider text-slate-100 uppercase">
                       {cat.title}
                     </h3>
-                    <span className="text-xs sm:text-sm text-slate-400 font-medium">
-                      3 Equipment Choices
-                    </span>
                   </div>
                 </div>
 

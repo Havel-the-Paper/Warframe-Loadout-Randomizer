@@ -11527,7 +11527,9 @@
       "isIncarnon": false,
       "isKuva": false,
       "isTenet": false,
-      "polarities": [],
+      "polarities": [
+        "madurai"
+      ],
       "damage": [
         3.3333299,
         3.3333299,
